@@ -23,12 +23,31 @@ the names of all products in a specific category (e.g. 'electronics')
 ******************************************************************************/
 
 const products = [
-    { name: "Smartphone", price: 800, category: "electronics" },
-    { name: "Headphones", price: 150, category: "electronics" },
-    { name: "Coffee Maker", price: 100, category: "home appliances" },
-    { name: "Blender", price: 250, category: "home appliances" },
-    { name: "Laptop", price: 1200, category: "electronics" },
-    { name: "T-shirt", price: 50, category: "clothing" },
-    { name: "Sneakers", price: 300, category: "clothing" }
-  ];
+  { name: "Smartphone", price: 800, category: "electronics" },
+  { name: "Headphones", price: 150, category: "electronics" },
+  { name: "Coffee Maker", price: 100, category: "home appliances" },
+  { name: "Blender", price: 250, category: "home appliances" },
+  { name: "Laptop", price: 1200, category: "electronics" },
+  { name: "T-shirt", price: 50, category: "clothing" },
+  { name: "Sneakers", price: 300, category: "clothing" },
+];
+console.log(products);
 
+const lowPrice = products.filter((e) => e.price < 200);
+console.log(lowPrice);
+
+const names = products.map((e) => e.name);
+console.log(names);
+
+const electronics = products
+  .filter((e) => e.category === "electronics")
+  .map((e) => e.name);
+console.log(electronics);
+
+const highPrice = products.some((e) => e.price > 1000);
+
+console.log(highPrice);
+
+const totalNum = products.reduce((a, e) => a + e.price, 0);
+
+console.log(totalNum);
